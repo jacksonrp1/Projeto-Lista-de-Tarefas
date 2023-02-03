@@ -12,7 +12,9 @@ export default function App() {
   const [Tarefas, setTarefas] = useState([])
 
   useEffect(() => {
-    const tarefasLoad = JSON.parse(localStorage.getItem('tarefas'))
+    const tarefasLoad = localStorage.getItem('tarefas')
+      ? JSON.parse(localStorage.getItem('tarefas'))
+      : []
     if (tarefasLoad.length) {
       setTarefas(tarefasLoad)
     }
