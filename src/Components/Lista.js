@@ -4,9 +4,10 @@ import { FaTrashAlt } from 'react-icons/fa'
 export default function Lista({ props }) {
   const handleRemover = index => {
     let TarefasFiltradas = props.Tarefas.filter((taref, idx) => {
-      if (index !== idx) {
-        return taref
+      if (index === idx) {
+        return null
       }
+      return taref
     })
 
     props.setTarefas(TarefasFiltradas)

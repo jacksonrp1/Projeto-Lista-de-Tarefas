@@ -15,7 +15,7 @@ export default function Button({ props }) {
 }
 
 const ButtonAdd = styled.button`
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   background-color: #2c2f36;
   color: #fafafa;

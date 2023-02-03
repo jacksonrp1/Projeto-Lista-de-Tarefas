@@ -10,6 +10,7 @@ import Lista from './Components/Lista.js'
 export default function App() {
   const [InputValue, setInputValue] = useState('')
   const [Tarefas, setTarefas] = useState([])
+  const HeightTela = document.documentElement.clientHeight
 
   useEffect(() => {
     const tarefasLoad = localStorage.getItem('tarefas')
@@ -27,7 +28,7 @@ export default function App() {
   }, [Tarefas])
 
   return (
-    <DivPai>
+    <DivPai height={HeightTela}>
       <DivForm>
         <DivInputBtn>
           <Input props={{ InputValue, setInputValue }} />
@@ -40,8 +41,8 @@ export default function App() {
 }
 const DivPai = styled.div`
   background-color: #2c2f36;
-  height: 100vh;
-  width: 100vw;
+  height: ${prop => prop.height}px;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +50,7 @@ const DivPai = styled.div`
 const DivForm = styled.div`
   background-color: #fafafa;
   max-height: 500px;
-  width: 450px;
+  max-width: 450px;
   padding: 20px;
   border-radius: 5px;
   display: grid;
@@ -58,7 +59,7 @@ const DivForm = styled.div`
 `
 const DivInputBtn = styled.div`
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr auto;
   grid-template-rows: 1fr;
   grid-column-gap: 5px;
 `

@@ -10,7 +10,8 @@ export default function Input({ props }) {
   )
 }
 const InputTarefa = styled.input`
-  font-size: 14px;
+  width: 100%;
+  font-size: 16px;
   background-color: #2c2f36;
   color: #fafafa;
   padding: 15px 10px;
