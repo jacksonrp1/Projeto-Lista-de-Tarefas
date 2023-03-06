@@ -45,6 +45,7 @@ const ListLi = styled.li`
   padding: 10px;
   border-radius: 5px;
   width: 100%;
+  overflow-wrap: break-word;
   svg {
     cursor: pointer;
     height: 25px;
